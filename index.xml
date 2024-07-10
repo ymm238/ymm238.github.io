@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ymm&#39;s 博客</title>
+    <link>https://ymm238.github.io/</link>
+    <description>Recent content on Ymm&#39;s 博客</description>
+    <image>
+      <title>Ymm&#39;s 博客</title>
+      <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.128.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Jul 2024 11:30:03 +0000</lastBuildDate>
+    <atom:link href="https://ymm238.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KBuild中内核编译顺序</title>
+      <link>https://ymm238.github.io/posts/kbuild_make_order/</link>
+      <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/kbuild_make_order/</guid>
+      <description>问题背景 近日在解决一个i2c驱动问题时发现奇怪的现象，两个相同内核的不同i2c驱动在/dev下创建的字符设备id不同。 简化如下表格
+系统A 系统B ismt i2c-0 i2c-1 i801 i2c-1 i2c-0 系统A为通过iso直接罐装的发行版系统，系统B为定制化业务系统。系统B上层业务代码需要使用i2c-0字符设备且要保证为ismt总线（关键硬件挂载在ismt总线），所以需要将系统B中i2c-0与ismt总线绑定。起初通过修改两个i2c驱动源码，将i2c设备添加接口i2c_add_adapter接口更改为i2c_add_numbered_adapter，使其与id静态绑定满足上述需求。但因为发现两个系统id不同的根本原因，所以继续调研跟踪。
+跟踪 调研流程如下：
+i2c的字符设备不是由驱动本身创建，而是由第三个内核模块i2c-dev创建，根据其源码，影响i2c字符设备id的有大概三个因素：ACPI、设备树与i2c总线上设备顺序。 起初严重怀疑BIOS中对设备地址的配置，即ACPI中DSDT表不同导致该问题，解析两个系统中DSDT表，获取两个设备的地址，发现完全相同；（其实OS下PCI设备BDF已经可以完全佐证这一点）； 设备树了解甚少，遂暂未调研； 观察dmesg日志，系统中PCI设备发现的时间是正确的（即BDF数值大小顺序）。i2c驱动的加载顺序没有按照PCI设备发现顺序进行加载，导致其在i2c总线上设备顺序不同，所以调研侧重点转向为什么相同内核两设备驱动的加载顺序相反； 两个系统编译config是不同的。系统B是定制化的业务场景，i2c驱动的CONFIG配置为“y”，即built-in编译进内核；系统A采用默认构建机的config配置，都为“m”，即以内核模块的形式编译。所以系统B中i2c驱动的加载是伴随内核启动的，内核启动完成设备初始话也就完成了；系统A是在内核启动完成后再加载i2c内核模块。 编译进内核会影响驱动启动顺序找了很久没找到依据，后来在stack overflow发现原因，What is the Linux built-in driver load order?built-in模块的影响因素为模块初始化函数的优先级、以及其在Makefile中的先后顺序。这两个模块的初始化优先级相同，所以，极大可能是Makefile中先后顺序的影响导致的。修改其Makefile顺序后确实如此，蛋疼！ 相关分析 在Linux内核的构建过程中，Makefile会根据模块之间的依赖关系来确定它们的编译顺序。这些依赖关系会影响到内核映像中模块的排列顺序，以及内核启动时哪些模块会被作为built-in模块直接加载到内核中。 具体来说，Makefile中的编译顺序决定了生成的vmlinuz文件中模块的排列顺序。内核启动时，会根据这个顺序来逐个加载模块。如果某个模块在Makefile中编译得较早，通常意味着它在vmlinuz文件中的位置较靠前，这样它有较高的优先级在内核启动时被加载为built-in模块。 因此，Makefile中的编译顺序直接影响了内核启动时built-in模块的加载顺序。这种顺序性能够在一定程度上影响到内核的初始化过程。</description>
+    </item>
+  </channel>
+</rss>
