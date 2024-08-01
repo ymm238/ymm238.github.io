@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Linux on Ymm&#39;s 博客</title>
-    <link>https://ymm238.github.io/tags/linux/</link>
-    <description>Recent content in Linux on Ymm&#39;s 博客</description>
+    <title>C on Ymm&#39;s 博客</title>
+    <link>https://ymm238.github.io/tags/c/</link>
+    <description>Recent content in C on Ymm&#39;s 博客</description>
     <image>
       <title>Ymm&#39;s 博客</title>
       <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,13 +12,13 @@
     <generator>Hugo -- 0.128.2</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 09 Jul 2024 11:30:03 +0000</lastBuildDate>
-    <atom:link href="https://ymm238.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ymm238.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>KBuild中内核编译顺序</title>
-      <link>https://ymm238.github.io/posts/kbuild_make_order/</link>
+      <title>关于位移运算的几个坑</title>
+      <link>https://ymm238.github.io/posts/shift_operator/</link>
       <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
-      <guid>https://ymm238.github.io/posts/kbuild_make_order/</guid>
-      <description>问题背景 近日在解决一个i2c驱动问题时发现奇怪的现象，两个相同内核的不同i2c驱动在/dev下创建的字符设备id不同。 简化如下表格 系统A 系统</description>
+      <guid>https://ymm238.github.io/posts/shift_operator/</guid>
+      <description>之前用左移、右移运算符不多，最近发现几个问题，遂记录在这里。后续随时补充。 1. 位移运算符的优先级 左移、右移优先级是低于加减运算的，如以下代码为</description>
     </item>
   </channel>
 </rss>
