@@ -9,7 +9,7 @@
       <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.128.2</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 09 Jul 2024 11:30:03 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -18,14 +18,43 @@
       <link>https://ymm238.github.io/posts/kbuild_make_order/</link>
       <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
       <guid>https://ymm238.github.io/posts/kbuild_make_order/</guid>
-      <description>问题背景 近日在解决一个i2c驱动问题时发现奇怪的现象，两个相同内核的不同i2c驱动在/dev下创建的字符设备id不同。 简化如下表格 系统A 系统</description>
+      <description>&lt;h2 id=&#34;问题背景&#34;&gt;问题背景&lt;/h2&gt;
+&lt;p&gt;  近日在解决一个i2c驱动问题时发现奇怪的现象，两个相同内核的不同i2c驱动在/dev下创建的字符设备id不同。 简化如下表格&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;系统A&lt;/th&gt;
+          &lt;th&gt;系统B&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ismt&lt;/td&gt;
+          &lt;td&gt;i2c-0&lt;/td&gt;
+          &lt;td&gt;i2c-1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;i801&lt;/td&gt;
+          &lt;td&gt;i2c-1&lt;/td&gt;
+          &lt;td&gt;i2c-0&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;  系统A为通过iso直接罐装的发行版系统，系统B为定制化业务系统。系统B上层业务代码需要使用i2c-0字符设备且要保证为ismt总线（关键硬件挂载在ismt总线），所以需要将系统B中i2c-0与ismt总线绑定。起初通过修改两个i2c驱动源码，将i2c设备添加接口i2c_add_adapter接口更改为i2c_add_numbered_adapter，使其与id静态绑定满足上述需求。但因为发现两个系统id不同的根本原因，所以继续调研跟踪。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于位移运算的几个坑</title>
       <link>https://ymm238.github.io/posts/shift_operator/</link>
       <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
       <guid>https://ymm238.github.io/posts/shift_operator/</guid>
-      <description>之前用左移、右移运算符不多，最近发现几个问题，遂记录在这里。后续随时补充。 1. 位移运算符的优先级 左移、右移优先级是低于加减运算的，如以下代码为</description>
+      <description>&lt;p&gt;  之前用左移、右移运算符不多，最近发现几个问题，遂记录在这里。后续随时补充。&lt;/p&gt;
+&lt;h2 id=&#34;1-位移运算符的优先级&#34;&gt;1. 位移运算符的优先级&lt;/h2&gt;
+&lt;p&gt;  左移、右移优先级是低于加减运算的，如以下代码为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;  结果是 4，而不是 2。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

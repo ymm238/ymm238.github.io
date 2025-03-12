@@ -9,7 +9,7 @@
       <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.128.2</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 09 Jul 2024 11:30:03 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,13 @@
       <link>https://ymm238.github.io/posts/shift_operator/</link>
       <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
       <guid>https://ymm238.github.io/posts/shift_operator/</guid>
-      <description>之前用左移、右移运算符不多，最近发现几个问题，遂记录在这里。后续随时补充。 1. 位移运算符的优先级 左移、右移优先级是低于加减运算的，如以下代码为</description>
+      <description>&lt;p&gt;  之前用左移、右移运算符不多，最近发现几个问题，遂记录在这里。后续随时补充。&lt;/p&gt;
+&lt;h2 id=&#34;1-位移运算符的优先级&#34;&gt;1. 位移运算符的优先级&lt;/h2&gt;
+&lt;p&gt;  左移、右移优先级是低于加减运算的，如以下代码为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;  结果是 4，而不是 2。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
