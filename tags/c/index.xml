@@ -11,20 +11,116 @@
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 09 Jul 2024 11:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Mar 2025 09:40:28 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>关于位移运算的几个坑</title>
+      <title>vim常用插件汇总</title>
+      <link>https://ymm238.github.io/posts/vim_plug/</link>
+      <pubDate>Thu, 13 Mar 2025 09:40:28 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/vim_plug/</guid>
+      <description>&lt;p&gt;  TODO&lt;/p&gt;
+&lt;h2 id=&#34;todo&#34;&gt;TODO&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>C语言运算符优先级及注意事项</title>
       <link>https://ymm238.github.io/posts/shift_operator/</link>
       <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
       <guid>https://ymm238.github.io/posts/shift_operator/</guid>
-      <description>&lt;p&gt;  之前用左移、右移运算符不多，最近发现几个问题，遂记录在这里。后续随时补充。&lt;/p&gt;
-&lt;h2 id=&#34;1-位移运算符的优先级&#34;&gt;1. 位移运算符的优先级&lt;/h2&gt;
-&lt;p&gt;  左移、右移优先级是低于加减运算的，如以下代码为：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;  结果是 4，而不是 2。&lt;/p&gt;</description>
+      <description>&lt;p&gt;  该博客主要记录C语言优先级使用时的易错点。&lt;/p&gt;
+&lt;h2 id=&#34;常见运算符优先级对比&#34;&gt;常见运算符优先级对比&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;运算符&lt;/th&gt;
+          &lt;th&gt;优先级&lt;/th&gt;
+          &lt;th&gt;示例&lt;/th&gt;
+          &lt;th&gt;解释&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;()&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;(a + b) * c&lt;/td&gt;
+          &lt;td&gt;先计算括号内的表达式&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;[]&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;arr[0]&lt;/td&gt;
+          &lt;td&gt;先访问数组元素&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;++ &amp;ndash;&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;*num++&lt;/td&gt;
+          &lt;td&gt;先返回当前值，然后递增指针&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;* / %&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;a * b + c&lt;/td&gt;
+          &lt;td&gt;先进行乘法，再进行加法&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;+ -&lt;/td&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;a + b * c&lt;/td&gt;
+          &lt;td&gt;先进行乘法，再进行加法&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;laquo; &amp;raquo;&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;a &amp;laquo; b + c&lt;/td&gt;
+          &lt;td&gt;先进行加法，再进行左移&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;lt; &amp;lt;= &amp;gt; &amp;gt;=&lt;/td&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;a &amp;lt; b &amp;amp;&amp;amp; c &amp;gt; d&lt;/td&gt;
+          &lt;td&gt;先比较，再进行逻辑与&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;== !=&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;a == b&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&amp;amp;&amp;amp;&lt;/td&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;a &amp;amp;&amp;amp; b&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;``&lt;/td&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;?:&lt;/td&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;a &amp;gt; b ? a : b&lt;/td&gt;
+          &lt;td&gt;先判断条件，再执行对应的分支&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;=&lt;/td&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;a = b = c&lt;/td&gt;
+          &lt;td&gt;从右到左赋值&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;,&lt;/td&gt;
+          &lt;td&gt;16&lt;/td&gt;
+          &lt;td&gt;a = (b++, c++)&lt;/td&gt;
+          &lt;td&gt;从左到右依次执行，返回最后一个值&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;常见误区&#34;&gt;常见误区&lt;/h2&gt;
+&lt;h3 id=&#34;位移运算符&#34;&gt;位移运算符&lt;/h3&gt;
+&lt;p&gt;  左移、右移优先级是低于加减运算的，如以下代码为：&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
