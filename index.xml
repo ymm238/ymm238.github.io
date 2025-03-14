@@ -24,7 +24,7 @@
     <item>
       <title>C语言运算符优先级及注意事项</title>
       <link>https://ymm238.github.io/posts/shift_operator/</link>
-      <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
+      <pubDate>Thu, 09 Jan 2025 09:23:03 +0000</pubDate>
       <guid>https://ymm238.github.io/posts/shift_operator/</guid>
       <description>&lt;p&gt;  该博客主要记录C语言优先级使用时的易错点。&lt;/p&gt;
 &lt;h2 id=&#34;常见运算符优先级对比&#34;&gt;常见运算符优先级对比&lt;/h2&gt;
@@ -53,8 +53,14 @@
       &lt;tr&gt;
           &lt;td&gt;++ &amp;ndash;&lt;/td&gt;
           &lt;td&gt;2&lt;/td&gt;
-          &lt;td&gt;*num++&lt;/td&gt;
-          &lt;td&gt;先返回当前值，然后递增指针&lt;/td&gt;
+          &lt;td&gt;num++&lt;/td&gt;
+          &lt;td&gt;num = num + 1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;* &amp;amp;&lt;/td&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;*address&lt;/td&gt;
+          &lt;td&gt;取address处地址的值&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;* / %&lt;/td&gt;
