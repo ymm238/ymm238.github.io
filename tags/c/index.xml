@@ -14,12 +14,11 @@
     <lastBuildDate>Thu, 13 Mar 2025 09:40:28 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>vim常用插件汇总</title>
+      <title>kernel代码阅读生产力 -- vim plug、Cscope</title>
       <link>https://ymm238.github.io/posts/vim_plug/</link>
       <pubDate>Thu, 13 Mar 2025 09:40:28 +0000</pubDate>
       <guid>https://ymm238.github.io/posts/vim_plug/</guid>
-      <description>&lt;p&gt;  TODO&lt;/p&gt;
-&lt;h2 id=&#34;todo&#34;&gt;TODO&lt;/h2&gt;</description>
+      <description>&lt;p&gt;  Vim 是一个Linux上功能强大的文本编辑器，通过安装插件，你可以将Vim打造成一个功能齐全的IDE。vim-plug 是一个轻量级且易于使用的插件管理器，能够帮助用户轻松安装、更新和删除插件。本文将介绍如何在Linux系统上安装和使用 vim-plug 来管理你的 Vim 插件。本人vim配置可见&lt;a href=&#34;https://github.com/ymm238/vimrc&#34;&gt;vimrc&lt;/a&gt;。使用vim相关插件配合Cscope看内核代码将流畅起飞！&lt;/p&gt;</description>
     </item>
     <item>
       <title>C语言运算符优先级及注意事项</title>
