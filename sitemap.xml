@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ymm238.github.io/tags/kernel/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://ymm238.github.io/tags/mm/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://ymm238.github.io/posts/mmu/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://ymm238.github.io/posts/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://ymm238.github.io/tags/reg/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://ymm238.github.io/tags/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://ymm238.github.io/</loc>
+    <lastmod>2025-04-28T17:30:03+00:00</lastmod>
+  </url><url>
     <loc>https://ymm238.github.io/tags/c/</loc>
     <lastmod>2025-03-13T09:40:28+00:00</lastmod>
   </url><url>
-    <loc>https://ymm238.github.io/posts/</loc>
-    <lastmod>2025-03-13T09:40:28+00:00</lastmod>
-  </url><url>
-    <loc>https://ymm238.github.io/tags/</loc>
-    <lastmod>2025-03-13T09:40:28+00:00</lastmod>
-  </url><url>
     <loc>https://ymm238.github.io/posts/vim_plug/</loc>
-    <lastmod>2025-03-13T09:40:28+00:00</lastmod>
-  </url><url>
-    <loc>https://ymm238.github.io/</loc>
     <lastmod>2025-03-13T09:40:28+00:00</lastmod>
   </url><url>
     <loc>https://ymm238.github.io/posts/shift_operator/</loc>

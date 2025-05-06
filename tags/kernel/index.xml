@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kernel on Ymm&#39;s 博客</title>
+    <link>https://ymm238.github.io/tags/kernel/</link>
+    <description>Recent content in Kernel on Ymm&#39;s 博客</description>
+    <image>
+      <title>Ymm&#39;s 博客</title>
+      <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 28 Apr 2025 17:30:03 +0000</lastBuildDate>
+    <atom:link href="https://ymm238.github.io/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MMU、TLB 和页表：核心概念解析</title>
+      <link>https://ymm238.github.io/posts/mmu/</link>
+      <pubDate>Mon, 28 Apr 2025 17:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/mmu/</guid>
+      <description>&lt;h2 id=&#34;mmutlb-和页表核心概念解析&#34;&gt;&lt;strong&gt;MMU、TLB 和页表：核心概念解析&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;在计算机系统中，&lt;strong&gt;内存管理单元（MMU）&lt;/strong&gt;、&lt;strong&gt;页表（Page Table）&lt;/strong&gt; 和 &lt;strong&gt;转换后备缓冲器（TLB）&lt;/strong&gt; 共同协作，实现虚拟内存到物理内存的高效映射。以下是它们的核心逻辑和交互关系：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

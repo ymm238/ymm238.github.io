@@ -11,8 +11,29 @@
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Mar 2025 09:40:28 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Apr 2025 17:30:03 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kernel</title>
+      <link>https://ymm238.github.io/tags/kernel/</link>
+      <pubDate>Mon, 28 Apr 2025 17:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/tags/kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mm</title>
+      <link>https://ymm238.github.io/tags/mm/</link>
+      <pubDate>Mon, 28 Apr 2025 17:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/tags/mm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reg</title>
+      <link>https://ymm238.github.io/tags/reg/</link>
+      <pubDate>Mon, 28 Apr 2025 17:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/tags/reg/</guid>
+      <description></description>
+    </item>
     <item>
       <title>C</title>
       <link>https://ymm238.github.io/tags/c/</link>
