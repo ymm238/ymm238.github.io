@@ -11,8 +11,23 @@
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Apr 2025 17:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 May 2025 13:30:03 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sched class简介</title>
+      <link>https://ymm238.github.io/posts/sched_class/</link>
+      <pubDate>Fri, 09 May 2025 13:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/sched_class/</guid>
+      <description>&lt;h2 id=&#34;linux内核调度类解析面向对象设计的精妙实践&#34;&gt;Linux内核调度类解析：面向对象设计的精妙实践&lt;/h2&gt;
+&lt;p&gt;  在Linux内核中，&lt;strong&gt;调度类（Scheduler Class）&lt;/strong&gt; 是调度器实现的核心抽象机制。它通过模块化的设计，将不同类型的任务调度策略解耦，同时兼顾实时性、公平性和资源分配的效率。这种设计不仅体现了内核开发者对复杂系统需求的深刻理解，还展现了面向对象思想在C语言中的巧妙实践。调度器相关代码位于&lt;code&gt;kernel/sched/&lt;/code&gt;目录下。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>模块加载与卸载</title>
+      <link>https://ymm238.github.io/posts/modules/</link>
+      <pubDate>Fri, 09 May 2025 11:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/modules/</guid>
+      <description>&lt;p&gt;在Linux内核开发中，模块化设计允许开发者动态扩展内核功能而无需重新编译整个内核。本文将深入解析模块的加载与卸载、参数传递机制，以及如何编写高效的Makefile，帮助开发者快速上手内核模块开发。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>MMU、TLB 和页表：核心概念解析</title>
       <link>https://ymm238.github.io/posts/mmu/</link>

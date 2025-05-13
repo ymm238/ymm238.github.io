@@ -11,13 +11,27 @@
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 28 Apr 2025 17:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 May 2025 13:30:03 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kernel</title>
       <link>https://ymm238.github.io/tags/kernel/</link>
-      <pubDate>Mon, 28 Apr 2025 17:30:03 +0000</pubDate>
+      <pubDate>Fri, 09 May 2025 13:30:03 +0000</pubDate>
       <guid>https://ymm238.github.io/tags/kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sched</title>
+      <link>https://ymm238.github.io/tags/sched/</link>
+      <pubDate>Fri, 09 May 2025 13:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/tags/sched/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Modules</title>
+      <link>https://ymm238.github.io/tags/modules/</link>
+      <pubDate>Fri, 09 May 2025 11:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/tags/modules/</guid>
       <description></description>
     </item>
     <item>
@@ -42,10 +56,10 @@
       <description></description>
     </item>
     <item>
-      <title>Linux</title>
-      <link>https://ymm238.github.io/tags/linux/</link>
+      <title>Kbuild</title>
+      <link>https://ymm238.github.io/tags/kbuild/</link>
       <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
-      <guid>https://ymm238.github.io/tags/linux/</guid>
+      <guid>https://ymm238.github.io/tags/kbuild/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Modules on Ymm&#39;s 博客</title>
+    <link>https://ymm238.github.io/tags/modules/</link>
+    <description>Recent content in Modules on Ymm&#39;s 博客</description>
+    <image>
+      <title>Ymm&#39;s 博客</title>
+      <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 May 2025 11:30:03 +0000</lastBuildDate>
+    <atom:link href="https://ymm238.github.io/tags/modules/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>模块加载与卸载</title>
+      <link>https://ymm238.github.io/posts/modules/</link>
+      <pubDate>Fri, 09 May 2025 11:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/modules/</guid>
+      <description>&lt;p&gt;在Linux内核开发中，模块化设计允许开发者动态扩展内核功能而无需重新编译整个内核。本文将深入解析模块的加载与卸载、参数传递机制，以及如何编写高效的Makefile，帮助开发者快速上手内核模块开发。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

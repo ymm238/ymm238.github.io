@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sched on Ymm&#39;s 博客</title>
+    <link>https://ymm238.github.io/tags/sched/</link>
+    <description>Recent content in Sched on Ymm&#39;s 博客</description>
+    <image>
+      <title>Ymm&#39;s 博客</title>
+      <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 09 May 2025 13:30:03 +0000</lastBuildDate>
+    <atom:link href="https://ymm238.github.io/tags/sched/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sched class简介</title>
+      <link>https://ymm238.github.io/posts/sched_class/</link>
+      <pubDate>Fri, 09 May 2025 13:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/sched_class/</guid>
+      <description>&lt;h2 id=&#34;linux内核调度类解析面向对象设计的精妙实践&#34;&gt;Linux内核调度类解析：面向对象设计的精妙实践&lt;/h2&gt;
+&lt;p&gt;  在Linux内核中，&lt;strong&gt;调度类（Scheduler Class）&lt;/strong&gt; 是调度器实现的核心抽象机制。它通过模块化的设计，将不同类型的任务调度策略解耦，同时兼顾实时性、公平性和资源分配的效率。这种设计不仅体现了内核开发者对复杂系统需求的深刻理解，还展现了面向对象思想在C语言中的巧妙实践。调度器相关代码位于&lt;code&gt;kernel/sched/&lt;/code&gt;目录下。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

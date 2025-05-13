@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Kbuild on Ymm&#39;s 博客</title>
+    <link>https://ymm238.github.io/tags/kbuild/</link>
+    <description>Recent content in Kbuild on Ymm&#39;s 博客</description>
+    <image>
+      <title>Ymm&#39;s 博客</title>
+      <url>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://ymm238.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 09 Jul 2024 11:30:03 +0000</lastBuildDate>
+    <atom:link href="https://ymm238.github.io/tags/kbuild/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KBuild中内核编译顺序</title>
+      <link>https://ymm238.github.io/posts/kbuild_make_order/</link>
+      <pubDate>Tue, 09 Jul 2024 11:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/kbuild_make_order/</guid>
+      <description>&lt;h2 id=&#34;问题背景&#34;&gt;问题背景&lt;/h2&gt;
+&lt;p&gt;  近日在解决一个i2c驱动问题时发现奇怪的现象，两个相同内核的不同i2c驱动在/dev下创建的字符设备id不同。 简化如下表格&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;系统A&lt;/th&gt;
+          &lt;th&gt;系统B&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ismt&lt;/td&gt;
+          &lt;td&gt;i2c-0&lt;/td&gt;
+          &lt;td&gt;i2c-1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;i801&lt;/td&gt;
+          &lt;td&gt;i2c-1&lt;/td&gt;
+          &lt;td&gt;i2c-0&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;  系统A为通过iso直接罐装的发行版系统，系统B为定制化业务系统。系统B上层业务代码需要使用i2c-0字符设备且要保证为ismt总线（关键硬件挂载在ismt总线），所以需要将系统B中i2c-0与ismt总线绑定。起初通过修改两个i2c驱动源码，将i2c设备添加接口i2c_add_adapter接口更改为i2c_add_numbered_adapter，使其与id静态绑定满足上述需求。但因为发现两个系统id不同的根本原因，所以继续调研跟踪。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
