@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.145.0</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 May 2025 13:30:03 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 May 2025 11:30:03 +0000</lastBuildDate>
     <atom:link href="https://ymm238.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内核调度API</title>
+      <link>https://ymm238.github.io/posts/sched_api/</link>
+      <pubDate>Wed, 14 May 2025 11:30:03 +0000</pubDate>
+      <guid>https://ymm238.github.io/posts/sched_api/</guid>
+      <description>&lt;p&gt;Linux内核的调度模块（&lt;code&gt;sched&lt;/code&gt;）是内核的核心组件之一，负责管理进程的CPU资源分配。以下是调度模块中&lt;strong&gt;核心接口&lt;/strong&gt;的详细分析，内容分为多个部分，涵盖调度入口、调度类、上下文切换、优先级管理、CFS、负载均衡等关键功能。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>sched class简介</title>
       <link>https://ymm238.github.io/posts/sched_class/</link>
